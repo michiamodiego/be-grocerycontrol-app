@@ -1,0 +1,88 @@
+Dependency to install (sudo perl -MCPAN -e '<dependecy>')
+    Mojolicious
+    DBI
+    DBD::SQLite
+    Data::GUID
+    DateTime
+    Digest::SHA
+
+How to run the app
+    ./app.pl daemon -l http://*:8080
+
+Create your own migration
+    create table user (
+        id integer primary key, 
+        username varchar, 
+        password varchar, 
+        email varchar
+    );
+    insert into user (username, password, email) values ('sandiego', 'XohImNooBHFR0OVvjcYpJ3NgPQ1qq73WKhHvch0VQtg', 'santoro.diego.dev@gmail.com');
+
+    create table token (
+        id integer primary key, 
+        user_id integer, 
+        token varchar, 
+        expires_at integer
+    );
+
+    create table market (
+        id integer primary key, 
+        name varchar, 
+        address varchar, 
+        city varchar, 
+        postal_code varchar, 
+        inserted_by varchar, 
+        inserted_at integer, 
+        updated_by varchar, 
+        updated_at integer, 
+        version integer
+    );
+
+    create table product (
+        id integer primary key, 
+        name varchar, 
+        description varchar, 
+        code varchar, 
+        quantity real, 
+        uom varchar, 
+        inserted_by varchar, 
+        inserted_at integer, 
+        updated_by varchar, 
+        updated_at integer, 
+        version integer
+    );
+
+    create table price_detection (
+        id integer primary key, 
+        product_id integer, 
+        market_id integer, 
+        price real, 
+        promo real, 
+        detected_by varchar, 
+        detected_at integer, 
+        version integer
+    );
+
+    create table product_stat (
+        id integer primary key, 
+        name varchar, 
+        product_id integer, 
+        market_id integer, 
+        price real, 
+        iteration integer, 
+        detected_by varchar, 
+        detected_at integer, 
+        version integer
+    );
+
+    create table permarket_stat (
+        id integer primary key, 
+        name varchar, 
+        product_id integer, 
+        market_id integer, 
+        price real, 
+        iteration integer, 
+        detected_by varchar, 
+        detected_at integer, 
+        version integer
+    );
