@@ -17,7 +17,7 @@ sub getServiceLocator {
             name => "dbtemplate", 
             factory => sub { 
 				my $driver = "SQLite"; # MariaDB
-				my $database = "/home/diego/be-grocerycontrol-app/database.db"; # gcontrol
+				my $database = "/app/database.db"; # gcontrol
                 return dbutils::dbtemplate->new(
                     {
                         driver => $driver, 
