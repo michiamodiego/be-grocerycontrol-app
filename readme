@@ -1,4 +1,4 @@
-Dependency to install (sudo perl -MCPAN -e '<dependecy>')
+Dependency to install (sudo perl -MCPAN -e 'install <dependecy>')
     Mojolicious
     DBI
     DBD::SQLite
