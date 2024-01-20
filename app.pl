@@ -2,7 +2,7 @@
 
 use Mojolicious::Lite -signatures;
 use Data::Dumper;
-use lib qw(/home/diego/bgcontrol/);
+use lib qw(./);
 use result::error;
 use utils::httpresponse;
 use config;

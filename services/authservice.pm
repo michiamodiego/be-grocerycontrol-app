@@ -50,7 +50,7 @@ sub login {
         return result::error->new("Impossibile loggare l'utente: impossibile geneare il token");
     }
 
-    my $raccount = $self->{userservice}->getAccountByUsername($user->{username});
+    my $raccount = $self->{userservice}->getAccountById($user->{id});
 
     if($raccount->error()) {
         return result::error->new("Impossibile loggare l'utente");

@@ -63,9 +63,7 @@ sub getDbh {
 
     my $config = shift; 
 
-    my $driver   = $config->{driver};
-    my $database = $config->{database};
-    my $dsn = "DBI:$driver:dbname=$database";
+    my $dsn = $config->{dsn};
     my $username = $config->{username};
     my $password = $config->{password};
     my $dbh = DBI->connect($dsn, $username, $password);
